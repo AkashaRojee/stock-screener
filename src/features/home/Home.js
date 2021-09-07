@@ -5,7 +5,11 @@ import SymbolCard from './SymbolCard';
 
 const Home = () => (
   <>
-    <HighlightCard />
+    <HighlightCard
+      image="AAPL"
+      name="HIGHEST-PRICED COMPANY NAME"
+      metric="$1000"
+    />
     <SectionTitle />
     <SymbolCard />
   </>

@@ -5,7 +5,11 @@ import DataRow from './DataRow';
 
 const Symbol = () => (
   <>
-    <HighlightCard />
+    <HighlightCard
+      image="MSFT"
+      name="SELECTED SYMBOL COMPANY NAME"
+      metric="$150"
+    />
     <SectionTitle />
     <DataRow />
   </>
