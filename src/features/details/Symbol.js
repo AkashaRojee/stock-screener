@@ -1,36 +1,52 @@
+// @ts-nocheck
+/* eslint-disable */
+
 import HighlightCard from 'common/components/HighlightCard/HighlightCard';
 import SectionTitle from 'common/components/SectionTitle';
-import React from 'react';
+import { getCompanyQuote } from 'features/details/symbolsSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import DataRow from './DataRow';
 import styles from './Symbol.module.scss';
 
-const Symbol = () => (
+const Symbol = () => {
+
+  const { symbol } = useParams();
+  const symbols = useSelector((state) => state.symbols);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCompanyQuote(symbol));
+  }, []);
+
+  let wantedSymbol = symbols.find((symbolObj) => symbolObj.symbol === symbol);
+
+  return (
   <>
-    <HighlightCard
-      image="MSFT"
-      name="SELECTED SYMBOL COMPANY NAME"
-      metric="$150"
-    />
+    {wantedSymbol && (
+      <HighlightCard
+        image={symbol}
+        name={wantedSymbol.data.name}
+        metric={wantedSymbol.data.price}
+      />
+    )}
+
     <SectionTitle title="QUOTE BREAKDOWN" />
+
     <div className={styles.dataRows}>
-      <DataRow
-        item="Price"
-        metric="$100"
-      />
-      <DataRow
-        item="Open"
-        metric="$102.30"
-      />
-      <DataRow
-        item="Previous close"
-        metric="$109.30"
-      />
-      <DataRow
-        item="Volume"
-        metric="828190"
-      />
+
+      {wantedSymbol && Object.entries(wantedSymbol.data).map(([dataItem, dataValue]) => (
+        <DataRow
+          key={dataItem}
+          item={dataItem}
+          metric={dataValue}
+        />
+      ))}
+
     </div>
   </>
 );
+};
 
 export default Symbol;
