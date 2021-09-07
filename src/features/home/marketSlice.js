@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -8,7 +10,7 @@ export const getSymbolsList = createAsyncThunk('/stock/list/get', async () => {
 
 export const marketSlice = createSlice({
   name: 'markets',
-  initialState: {},
+  initialState: [],
   reducers: {
   },
   extraReducers: (builder) => {
@@ -16,8 +18,14 @@ export const marketSlice = createSlice({
       action.payload.forEach(({
         symbol, name, price, exchange,
       }) => {
-        if (state[exchange] === undefined) state[exchange] = {};
-        state[exchange][symbol] = { name, price };
+      
+        if (state.find((marketObj) => marketObj.market === exchange) === undefined) {
+          // console.log(exchange);
+          state.push({ market: exchange, symbols: [{ symbol, name, price }]})
+        } else {
+          state.find((marketObj) => marketObj.market === exchange).symbols.push( { symbol, name, price });
+        }
+
       });
     });
   },

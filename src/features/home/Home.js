@@ -13,10 +13,11 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (Object.keys(markets).length === 0) dispatch(getSymbolsList());
+    if (markets.length === 0) dispatch(getSymbolsList());
   }, []);
 
-  const symbols = markets['New York Stock Exchange'];
+  let symbols;
+  if (markets.length != 0) symbols = markets.find((marketObj) => marketObj.market === 'New York Stock Exchange').symbols;
 
   return (
     <>
@@ -30,7 +31,7 @@ const Home = () => {
         
       <div className={styles.symbolCards}>
 
-        {symbols && Object.entries(symbols).map(([symbol, { name, price }]) => (
+        {symbols && symbols.map(({symbol, name, price}) => (
           
           <SymbolCard
             key={symbol}
