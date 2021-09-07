@@ -1,0 +1,6 @@
+@import 'app/scss/flex';
+
+.dataRow {
+  @extend %flex-row;
+  @extend %justify-between;
+}
