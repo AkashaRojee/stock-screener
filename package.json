@@ -2,11 +2,13 @@
   "name": "stock-screener",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AkashaRojee.codes/stock-screener",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "msw": "^0.35.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,9 +20,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "test": "react-scripts test --testURL=http://localhost/stock-screener",
+    "eject": "react-scripts eject",
+    "eslint": "eslint src",
+    "stylelint": "stylelint src"
   },
   "eslintConfig": {
     "extends": [
