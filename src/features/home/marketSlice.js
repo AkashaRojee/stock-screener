@@ -13,15 +13,15 @@ export const marketSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getSymbolsList.fulfilled, (state, action) => {
-      action.payload.forEach((symbolObject) => {
-        const { exchange } = symbolObject;
-        state[exchange] = [];
+      action.payload.forEach(({
+        symbol, name, price, exchange,
+      }) => {
+        if (state[exchange] === undefined) state[exchange] = {};
+        state[exchange][symbol] = { name, price };
       });
     });
   },
 
 });
-
-// export const { add } = marketSlice.actions;
 
 export default marketSlice.reducer;
