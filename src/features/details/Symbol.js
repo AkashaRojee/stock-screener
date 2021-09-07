@@ -10,7 +10,7 @@ const Symbol = () => (
       name="SELECTED SYMBOL COMPANY NAME"
       metric="$150"
     />
-    <SectionTitle />
+    <SectionTitle title="QUOTE BREAKDOWN" />
     <DataRow />
   </>
 );

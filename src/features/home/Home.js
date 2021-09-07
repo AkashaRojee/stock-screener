@@ -10,7 +10,7 @@ const Home = () => (
       name="HIGHEST-PRICED COMPANY NAME"
       metric="$1000"
     />
-    <SectionTitle />
+    <SectionTitle title="STATS BY COMPANY" />
     <SymbolCard />
   </>
 );
