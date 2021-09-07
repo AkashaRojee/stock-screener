@@ -11,7 +11,21 @@ const Home = () => (
       metric="$1000"
     />
     <SectionTitle title="STATS BY COMPANY" />
-    <SymbolCard />
+    <SymbolCard
+      image="CMCSA"
+      name="Comcast Corporation"
+      metric="$16"
+    />
+    <SymbolCard
+      image="INTC"
+      name="Intel Corporation"
+      metric="$53"
+    />
+    <SymbolCard
+      image="AAPL"
+      name="Apple Corporation"
+      metric="$1000"
+    />
   </>
 );
 
