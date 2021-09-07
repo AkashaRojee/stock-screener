@@ -9,7 +9,7 @@ export const getSymbolsList = createAsyncThunk('/stock/list/get', async () => {
 });
 
 export const marketSlice = createSlice({
-  name: 'markets',
+  name: 'market',
   initialState: [],
   reducers: {
   },

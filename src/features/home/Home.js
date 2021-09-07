@@ -9,6 +9,7 @@ import SymbolCard from './SymbolCard';
 import styles from './Home.module.scss';
 
 const Home = () => {
+  // @ts-ignore
   const markets = useSelector((state) => state.market);
   const dispatch = useDispatch();
 
@@ -16,14 +17,19 @@ const Home = () => {
     if (markets.length === 0) dispatch(getSymbolsList());
   }, []);
 
-  let symbols;
-  if (markets.length != 0) symbols = markets.find((marketObj) => marketObj.market === 'New York Stock Exchange').symbols;
+  let symbols, sortedSymbols;
+  if (markets.length != 0) {
+    symbols = markets.find((marketObj) => marketObj.market === 'New York Stock Exchange').symbols;
+    sortedSymbols = [...symbols];
+    sortedSymbols.sort((a, b) => (a.price < b.price) ? 1 : -1);
+    symbols = sortedSymbols;
+  }
 
   return (
     <>
       <HighlightCard
         image="AAPL"
-        name="HIGHEST-PRICED COMPANY NAME"
+        name="AVERAGE PRICE"
         metric="$1000"
       />
       
