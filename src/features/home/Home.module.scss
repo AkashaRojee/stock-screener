@@ -1,0 +1,6 @@
+@import 'app/scss/flex';
+
+.symbolCards {
+  @extend %flex-row;
+  @extend %wrap;
+}
