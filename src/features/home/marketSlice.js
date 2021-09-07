@@ -4,7 +4,7 @@ export const marketSlice = createSlice({
   name: 'markets',
   initialState: [],
   reducers: {
-    
+
   },
 
 });
