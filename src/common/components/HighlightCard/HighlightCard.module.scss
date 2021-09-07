@@ -1,0 +1,17 @@
+@import 'app/scss/flex';
+
+.pane {
+
+  border: 1px solid black;
+  @extend %align-center;
+
+  .first {
+    width: 50%;
+    border: 1px solid black;
+  }
+
+  .second {
+    border: 1px solid black;
+    width: 50%;
+  }
+}
