@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Symbol from '../features/details/Symbol';
-import Header from '../features/header/Header';
-import Home from '../features/home/Home';
+import Symbol from 'features/details/Symbol';
+import Header from 'features/header/Header';
+import Home from 'features/home/Home';
 import './App.css';
 
 const App = () => (

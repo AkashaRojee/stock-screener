@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src/",
+    "paths": {
+      "features/*": ["features/*"],
+      "common/*": ["common/*"]
+    },
     "checkJs": true,
     "jsx": "react"
   }
