@@ -4,7 +4,8 @@
     "paths": {
       "app/*": ["app/*"],
       "features/*": ["features/*"],
-      "common/*": ["common/*"]
+      "common/*": ["common/*"],
+      "assets/*": ["assets/*"]
     },
     "checkJs": true,
     "jsx": "react"
