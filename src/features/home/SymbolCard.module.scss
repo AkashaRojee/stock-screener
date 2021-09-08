@@ -4,6 +4,12 @@
   @extend %flex-col;
   width: 50%;
 
+  svg {
+    @extend %self-end;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+
   .image {
     width: 150px;
     height: 150px;

@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import styles from './SymbolCard.module.scss';
 import fallbackImage from 'assets/image-not-found.png';
 
@@ -10,6 +11,7 @@ const SymbolCard = ({ image, name, metric }) => {
 
   return (
     <Link to={`/symbols/${image}`} className={styles.symbolCard}>
+      <ArrowForwardIcon />
       <div className={styles.image}>
         <img
           src={`https://financialmodelingprep.com/image-stock/${image}.jpg`}
