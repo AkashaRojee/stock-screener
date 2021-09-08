@@ -4,6 +4,7 @@
 .dataRow {
   @extend %flex-row;
   @extend %justify-between;
+
   font-size: 18px;
   padding: 20px 10px;
   color: white;

@@ -3,13 +3,13 @@
 
 .symbolCard {
   @extend %flex-col;
+
   width: 50%;
   text-decoration: none;
   color: white;
   gap: 5px;
-
   padding: 10px 10px 20px 10px;
-  
+
   .title {
     font-weight: $bold;
     text-align: right;
@@ -32,12 +32,11 @@
     width: 90%;
     height: 160px;
     align-self: center;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px 0px;
+    margin: 10px 0;
     border-radius: 10px;
     background-color: white;
 
