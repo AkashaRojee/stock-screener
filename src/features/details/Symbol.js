@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* eslint-disable */
 
 import HighlightCard from 'common/components/HighlightCard/HighlightCard';
 import SectionTitle from 'common/components/SectionTitle/SectionTitle';
@@ -10,9 +9,7 @@ import { useParams } from 'react-router-dom';
 import DataRow from './DataRow';
 import styles from './Symbol.module.scss';
 
-const findSymbol = (symbols, searchValue) => {
-  return symbols.find((symbolObj) => symbolObj.symbol === searchValue);
-}
+const findSymbol = (symbols, searchValue) => symbols.find((obj) => obj.symbol === searchValue);
 
 const Symbol = () => {
   let colour = 0;
@@ -21,14 +18,14 @@ const Symbol = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    findSymbol(storedSymbols, symbol) || dispatch(getCompanyQuote(symbol));
+    if (findSymbol(storedSymbols, symbol) === undefined) dispatch(getCompanyQuote(symbol));
   }, []);
 
   const wantedSymbol = findSymbol(storedSymbols, symbol)?.data;
 
   return (
-  <>
-    {wantedSymbol && (
+    <>
+      {wantedSymbol && (
       <>
 
         <HighlightCard
@@ -42,25 +39,23 @@ const Symbol = () => {
         <div className={styles.dataRows}>
 
           {Object.entries(wantedSymbol).map(([dataItem, dataValue]) => {
-
             colour = !colour;
             return (
               <DataRow
                 colourClass={colour}
                 key={dataItem}
                 item={dataItem}
-                metric={dataValue}
+                metric={dataValue.toString()}
               />
             );
-
           })}
 
         </div>
 
       </>
-    )}
-  </>
-);
+      )}
+    </>
+  );
 };
 
 export default Symbol;

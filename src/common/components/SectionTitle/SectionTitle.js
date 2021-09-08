@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './SectionTitle.module.scss';
 
 const SectionTitle = ({ title }) => (
@@ -8,5 +7,9 @@ const SectionTitle = ({ title }) => (
     { title }
   </div>
 );
+
+SectionTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default SectionTitle;
