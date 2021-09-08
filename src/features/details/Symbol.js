@@ -24,7 +24,7 @@ const Symbol = () => {
     findSymbol(storedSymbols, symbol) || dispatch(getCompanyQuote(symbol));
   }, []);
 
-  let wantedSymbol = findSymbol(storedSymbols, symbol)?.data;
+  const wantedSymbol = findSymbol(storedSymbols, symbol)?.data;
 
   return (
   <>
