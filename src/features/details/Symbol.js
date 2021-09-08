@@ -15,7 +15,7 @@ const findSymbol = (symbols, searchValue) => {
 }
 
 const Symbol = () => {
-
+  let colour = 0;
   const { symbol } = useParams();
   const storedSymbols = useSelector((state) => state.symbols);
   const dispatch = useDispatch();
@@ -41,15 +41,19 @@ const Symbol = () => {
 
         <div className={styles.dataRows}>
 
-          {Object.entries(wantedSymbol).map(([dataItem, dataValue]) => (
+          {Object.entries(wantedSymbol).map(([dataItem, dataValue]) => {
 
-            <DataRow
-              key={dataItem}
-              item={dataItem}
-              metric={dataValue}
-            />
+            colour = !colour;
+            return (
+              <DataRow
+                colourClass={colour}
+                key={dataItem}
+                item={dataItem}
+                metric={dataValue}
+              />
+            );
 
-          ))}
+          })}
 
         </div>
 
