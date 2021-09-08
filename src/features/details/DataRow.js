@@ -4,7 +4,7 @@ import styles from './DataRow.module.scss';
 /* eslint-disable react/prop-types */
 const DataRow = ({ item, metric }) => (
   <div className={styles.dataRow}>
-    <span>{ item }</span>
+    <span className={styles.title}>{ item }</span>
     <span>{ metric }</span>
   </div>
 );

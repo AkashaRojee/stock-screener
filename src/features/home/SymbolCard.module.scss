@@ -1,8 +1,15 @@
+@import 'app/scss/variables';
 @import 'app/scss/flex';
 
 .symbolCard {
   @extend %flex-col;
   width: 50%;
+  text-decoration: none;
+  color: black;
+  
+  .title {
+    font-weight: $bold;
+  }
 
   svg {
     @extend %self-end;

@@ -16,7 +16,7 @@ const HighlightCard = ({ image, name, metric }) => (
     second={
       (
         <>
-          <div>{ name }</div>
+          <div className={styles.title}>{ name.toUpperCase() }</div>
           <div>{ metric }</div>
         </>
       )

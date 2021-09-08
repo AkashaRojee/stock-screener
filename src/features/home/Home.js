@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import HighlightCard from 'common/components/HighlightCard/HighlightCard';
-import SectionTitle from 'common/components/SectionTitle';
+import SectionTitle from 'common/components/SectionTitle/SectionTitle';
 import { getSymbolsList } from './marketSlice';
 import SymbolCard from './SymbolCard';
 import styles from './Home.module.scss';
@@ -52,7 +52,7 @@ const Home = () => {
             ))}
 
           </div>
-          
+
         </>
       )}
     </>

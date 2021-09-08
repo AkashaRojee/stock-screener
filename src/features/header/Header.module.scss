@@ -5,9 +5,10 @@
   @extend %flex-row;
 
   span {
-    font-family: $control-font;
     margin-left: auto;
     margin-right: auto;
+    font-weight: $light;
+    font-size: 18px;
   }
 }
 

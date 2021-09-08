@@ -1,6 +1,12 @@
+@import 'app/scss/variables';
 @import 'app/scss/flex';
 
 .dataRow {
   @extend %flex-row;
   @extend %justify-between;
+  font-size: 18px;
+
+  .title {
+    font-weight: $bold;
+  }
 }

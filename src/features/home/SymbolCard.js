@@ -19,7 +19,7 @@ const SymbolCard = ({ image, name, metric }) => {
           onError={(e) => e.target.src=fallbackImage}
         />
       </div>
-      <div>{ name }</div>
+      <div className={styles.title}>{ name.toUpperCase() }</div>
       <div>{ metric }</div>
     </Link>
   );

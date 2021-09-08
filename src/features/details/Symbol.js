@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import HighlightCard from 'common/components/HighlightCard/HighlightCard';
-import SectionTitle from 'common/components/SectionTitle';
+import SectionTitle from 'common/components/SectionTitle/SectionTitle';
 import { getCompanyQuote } from 'features/details/symbolsSlice';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -52,7 +52,7 @@ const Symbol = () => {
           ))}
 
         </div>
-        
+
       </>
     )}
   </>
