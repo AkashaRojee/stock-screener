@@ -1,9 +1,11 @@
+@import 'app/scss/variables';
 @import 'app/scss/flex';
 
 .header {
   @extend %flex-row;
 
   span {
+    font-family: $control-font;
     margin-left: auto;
     margin-right: auto;
   }
