@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link to="/"><ArrowBackIosIcon /></Link>
-      <span>{pathname === '/' ? 'Highest value' : 'Symbol value'}</span>
-      <MicIcon className={styles.mic} />
+      <span>{pathname === '/' ? 'highest value' : 'symbol value'}</span>
+      <MicIcon />
       <SettingsIcon />
     </div>
   );

@@ -2,4 +2,9 @@
 
 .header {
   @extend %flex-row;
+
+  span {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
