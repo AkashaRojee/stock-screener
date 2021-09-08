@@ -27,11 +27,13 @@ const Home = () => {
 
   return (
     <>
-      <HighlightCard
-        image="AAPL"
-        name="AVERAGE PRICE"
-        metric="$1000"
-      />
+      {symbols && (
+        <HighlightCard
+          image={symbols[0].symbol}
+          name={symbols[0].name}
+          metric={symbols[0].price}
+        />
+      )}
       
       <SectionTitle title="STATS BY COMPANY" />
         
