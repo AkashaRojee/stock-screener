@@ -10,25 +10,29 @@ import { useParams } from 'react-router-dom';
 import DataRow from './DataRow';
 import styles from './Symbol.module.scss';
 
+const findSymbol = (symbols, searchValue) => {
+  return symbols.find((symbolObj) => symbolObj.symbol === searchValue);
+}
+
 const Symbol = () => {
 
   const { symbol } = useParams();
-  const symbols = useSelector((state) => state.symbols);
+  const storedSymbols = useSelector((state) => state.symbols);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCompanyQuote(symbol));
+    findSymbol(storedSymbols, symbol) || dispatch(getCompanyQuote(symbol));
   }, []);
 
-  let wantedSymbol = symbols.find((symbolObj) => symbolObj.symbol === symbol);
+  let wantedSymbol = findSymbol(storedSymbols, symbol)?.data;
 
   return (
   <>
     {wantedSymbol && (
       <HighlightCard
         image={symbol}
-        name={wantedSymbol.data.name}
-        metric={wantedSymbol.data.price}
+        name={wantedSymbol.name}
+        metric={wantedSymbol.price}
       />
     )}
 
@@ -36,7 +40,7 @@ const Symbol = () => {
 
     <div className={styles.dataRows}>
 
-      {wantedSymbol && Object.entries(wantedSymbol.data).map(([dataItem, dataValue]) => (
+      {wantedSymbol && Object.entries(wantedSymbol).map(([dataItem, dataValue]) => (
         <DataRow
           key={dataItem}
           item={dataItem}

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable */
 
 import React, { useEffect } from 'react';
@@ -9,7 +10,6 @@ import SymbolCard from './SymbolCard';
 import styles from './Home.module.scss';
 
 const Home = () => {
-  // @ts-ignore
   const markets = useSelector((state) => state.market);
   const dispatch = useDispatch();
 

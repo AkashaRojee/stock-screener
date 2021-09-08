@@ -15,12 +15,12 @@ export const symbolsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getCompanyQuote.fulfilled, (state, action) => {
-      const { symbol, name, price, open, previousClose } = action.payload[0];
+
+      const { symbol, name, price, change, changesPercentage, open, previousClose, dayLow, dayHigh, yearLow, yearHigh, avgVolume, marketCap, pe, sharesOutstanding, eps } = action.payload[0];
+
       if (state.find((symbolObj) => symbolObj.symbol === symbol) === undefined) {
-        state.push({ symbol: symbol, data: { name, price, open, previousClose }})
-      } else {
-        state.find((symbolObj) => symbolObj.symbol === symbol).data = { name, price, open, previousClose };
-      }
+        state.push({ symbol: symbol, data: { name, price, change, changesPercentage, open, previousClose, dayLow, dayHigh, yearLow, yearHigh, avgVolume, marketCap, pe, sharesOutstanding, eps }})
+      } 
 
     });
 
