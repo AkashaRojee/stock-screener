@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link to="/" className={onDetailsPage ? styles.show : styles.hide}><ArrowBackIosIcon /></Link>
-      <span>{onDetailsPage ? 'highest value' : 'symbol value'}</span>
+      <span>{onDetailsPage ? 'symbol value' : 'highest value'}</span>
       <MicIcon />
       <SettingsIcon />
     </div>

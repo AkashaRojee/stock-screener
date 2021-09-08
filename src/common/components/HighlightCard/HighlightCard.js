@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable */
 
 import React from 'react';
 import SplitPane from '../SplitPane/SplitPane';
@@ -19,7 +19,7 @@ const HighlightCard = ({ image, name, metric }) => (
       (
         <>
           <div className={styles.title}>{ name.toUpperCase() }</div>
-          <div>{ metric }</div>
+          <div>${ metric }</div>
         </>
       )
     }

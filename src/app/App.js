@@ -7,7 +7,7 @@ import Home from 'features/home/Home';
 import './scss/styles.scss';
 
 const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/stock-screener">
     <Header />
     <Switch>
       <Route exact path="/">

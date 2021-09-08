@@ -4,6 +4,9 @@
 .header {
   @extend %flex-row;
   background-color: $bar-color;
+  color: white;
+  padding: 5px 10px;
+  gap: 5px;
 
   span {
     margin-left: auto;

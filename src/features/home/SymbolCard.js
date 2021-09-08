@@ -21,7 +21,7 @@ const SymbolCard = ({ colourClass, image, name, metric }) => {
         />
       </div>
       <div className={styles.title}>{ name.toUpperCase() }</div>
-      <div className={styles.subtitle}>{ metric }</div>
+      <div className={styles.subtitle}>${ metric }</div>
     </Link>
   );
 };

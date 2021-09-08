@@ -4,21 +4,36 @@
 .pane {
   @extend %align-center;
   background-color: $highlight-color;
+  color: white;
 
   .first {
     width: 50%;
+    padding: 10px;
 
     .image {
-      height: 150px;
+      width: 90%;
+      height: 160px;
+      align-self: center;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      margin: 10px 0px;
+      border-radius: 10px;
+      background-color: white;
   
       img {
-        max-width: 150px;
+        max-width: 90%;
+        max-height: 150px;
       }
     }
   }
 
   .second {
     width: 50%;
+    padding: 20px;
 
     .title {
       font-weight: $bold;
