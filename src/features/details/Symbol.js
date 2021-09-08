@@ -29,26 +29,32 @@ const Symbol = () => {
   return (
   <>
     {wantedSymbol && (
-      <HighlightCard
-        image={symbol}
-        name={wantedSymbol.name}
-        metric={wantedSymbol.price}
-      />
-    )}
+      <>
 
-    <SectionTitle title="QUOTE BREAKDOWN" />
-
-    <div className={styles.dataRows}>
-
-      {wantedSymbol && Object.entries(wantedSymbol).map(([dataItem, dataValue]) => (
-        <DataRow
-          key={dataItem}
-          item={dataItem}
-          metric={dataValue}
+        <HighlightCard
+          image={symbol}
+          name={wantedSymbol.name}
+          metric={wantedSymbol.price}
         />
-      ))}
 
-    </div>
+        <SectionTitle title="QUOTE BREAKDOWN" />
+
+        <div className={styles.dataRows}>
+
+          {Object.entries(wantedSymbol).map(([dataItem, dataValue]) => (
+
+            <DataRow
+              key={dataItem}
+              item={dataItem}
+              metric={dataValue}
+            />
+
+          ))}
+
+        </div>
+        
+      </>
+    )}
   </>
 );
 };

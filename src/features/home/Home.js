@@ -28,29 +28,33 @@ const Home = () => {
   return (
     <>
       {symbols && (
-        <HighlightCard
-          image={symbols[0].symbol}
-          name={symbols[0].name}
-          metric={symbols[0].price}
-        />
-      )}
-      
-      <SectionTitle title="STATS BY COMPANY" />
-        
-      <div className={styles.symbolCards}>
+        <>
 
-        {symbols && symbols.map(({symbol, name, price}) => (
-          
-          <SymbolCard
-            key={symbol}
-            image={symbol}
-            name={name}
-            metric={price}
+          <HighlightCard
+            image={symbols[0].symbol}
+            name={symbols[0].name}
+            metric={symbols[0].price}
           />
+        
+          <SectionTitle title="STATS BY COMPANY" />
 
-        ))}
+          <div className={styles.symbolCards}>
 
-      </div>
+            {symbols.map(({symbol, name, price}) => (
+
+              <SymbolCard
+                key={symbol}
+                image={symbol}
+                name={name}
+                metric={price}
+              />
+
+            ))}
+
+          </div>
+          
+        </>
+      )}
     </>
   );
 };
