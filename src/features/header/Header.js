@@ -7,12 +7,12 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const { pathname } = useLocation(); 
+  const onDetailsPage = useLocation().pathname === '/' ? false : true;
 
   return (
     <div className={styles.header}>
-      <Link to="/"><ArrowBackIosIcon /></Link>
-      <span>{pathname === '/' ? 'highest value' : 'symbol value'}</span>
+      <Link to="/" className={onDetailsPage ? styles.show : styles.hide}><ArrowBackIosIcon /></Link>
+      <span>{onDetailsPage ? 'highest value' : 'symbol value'}</span>
       <MicIcon />
       <SettingsIcon />
     </div>
