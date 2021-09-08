@@ -3,9 +3,18 @@
 
 .pane {
   @extend %align-center;
+  background-color: $highlight-color;
 
   .first {
     width: 50%;
+
+    .image {
+      height: 150px;
+  
+      img {
+        max-width: 150px;
+      }
+    }
   }
 
   .second {

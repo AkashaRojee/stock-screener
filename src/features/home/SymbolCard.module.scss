@@ -5,24 +5,52 @@
   @extend %flex-col;
   width: 50%;
   text-decoration: none;
-  color: black;
+  color: white;
+
+  // background-color: purple;
+  padding: 10px;
   
   .title {
     font-weight: $bold;
+    text-align: right;
+  }
+
+  .subtitle {
+    text-align: right;
   }
 
   svg {
     @extend %self-end;
-    border: 1px solid black;
+
+    border: 2px solid white;
     border-radius: 20px;
+    color: white;
   }
 
   .image {
-    width: 150px;
-    height: 150px;
+    width: 90%;
+    height: 160px;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 10px 0px;
+    border-radius: 10px;
+    background-color: white;
 
     img {
-      max-width: 150px;
+      max-width: 90%;
     }
   }
+}
+
+.colour1 {
+  background-color: $bar-color;
+}
+
+.colour2 {
+  background-color: $alt-color;
 }

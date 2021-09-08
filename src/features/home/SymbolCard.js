@@ -7,10 +7,11 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import styles from './SymbolCard.module.scss';
 import fallbackImage from 'assets/image-not-found.png';
 
-const SymbolCard = ({ image, name, metric }) => {
+const SymbolCard = ({ colourClass, image, name, metric }) => {
+  const backgroundColour = colourClass === 1 ? styles.colour1 : styles.colour2;
 
   return (
-    <Link to={`/symbols/${image}`} className={styles.symbolCard}>
+    <Link to={`/symbols/${image}`} className={`${styles.symbolCard} ${backgroundColour}`}>
       <ArrowForwardIcon />
       <div className={styles.image}>
         <img
@@ -20,7 +21,7 @@ const SymbolCard = ({ image, name, metric }) => {
         />
       </div>
       <div className={styles.title}>{ name.toUpperCase() }</div>
-      <div>{ metric }</div>
+      <div className={styles.subtitle}>{ metric }</div>
     </Link>
   );
 };

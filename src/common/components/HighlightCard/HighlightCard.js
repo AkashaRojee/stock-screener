@@ -10,7 +10,9 @@ const HighlightCard = ({ image, name, metric }) => (
     layout={new SplitPaneLayout('row', 'col', 'col', styles)}
     first={
       (
-        <img src={`https://financialmodelingprep.com/image-stock/${image}.jpg`} alt={name} />
+        <div className={styles.image}>
+          <img src={`https://financialmodelingprep.com/image-stock/${image}.jpg`} alt={name} />
+        </div>
       )
     }
     second={

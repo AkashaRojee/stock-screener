@@ -10,6 +10,8 @@ import SymbolCard from './SymbolCard';
 import styles from './Home.module.scss';
 
 const Home = () => {
+  let counter = 1;
+  let colour = 0;
   const markets = useSelector((state) => state.market);
   const dispatch = useDispatch();
 
@@ -40,16 +42,32 @@ const Home = () => {
 
           <div className={styles.symbolCards}>
 
-            {symbols.map(({symbol, name, price}) => (
+            {symbols.map(({symbol, name, price}, index) => {
 
-              <SymbolCard
-                key={symbol}
-                image={symbol}
-                name={name}
-                metric={price}
-              />
+              if (index === 0) {
+                colour = 1;
+              } else {
+                if (counter === 1) {
+                  colour = (colour === 1) ? 2 : 1;
+                  counter = counter + 1;
+                } else {
+                  counter = 1;
+                }
+              }
 
-            ))}
+              return (
+                <SymbolCard
+                  colourClass={colour}
+                  key={symbol}
+                  image={symbol}
+                  name={name}
+                  metric={price}
+                />
+              );
+
+              
+
+            })}
 
           </div>
 
