@@ -9,7 +9,6 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    console.log('change');
     if (selectedMarket !== e.target.value) dispatch(selectMarket(e.target.value));
   };
 
