@@ -1,8 +1,8 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { render, screen } from '../../test-utils';
 import App from 'app/App';
+import { render, screen } from '../../test-utils';
 
 describe('Clicking on a symbol on home page', () => {
   beforeEach(() => {
@@ -12,11 +12,11 @@ describe('Clicking on a symbol on home page', () => {
   test('Details page loads then displays symbol data and functioning back button', async () => {
     const symbol = await screen.findAllByText(/Berkshire/i);
     const symbolToClick = symbol[1].innerHTML;
-    
+
     const symbolName = document.querySelector('.title').innerHTML;
     const symbolPrice = document.querySelector('.subtitle').innerHTML;
     const symbolImage = document.querySelector('img').src;
-    
+
     const links = screen.getAllByRole('link');
     userEvent.click(links[1]);
 
@@ -27,7 +27,7 @@ describe('Clicking on a symbol on home page', () => {
 
     displayedSymbol.forEach((display) => {
       expect(display).toBeVisible();
-    })
+    });
 
     expect(screen.getByText(/symbol value/i)).toBeVisible();
     expect(screen.getByText(/quote breakdown/i)).toBeVisible();
@@ -45,7 +45,7 @@ describe('Clicking on a symbol on home page', () => {
     });
 
     const expectedDataItem = ['name', 'price', 'change', 'changesPercentage', 'open', 'previousClose', 'dayLow', 'dayHigh', 'yearLow', 'yearHigh', 'avgVolume', 'marketCap', 'pe', 'sharesOutstanding', 'eps'];
-    const symbolDataItem = screen.getAllByLabelText('quote data item').map(dataItem => dataItem.innerHTML);
+    const symbolDataItem = screen.getAllByLabelText('quote data item').map((dataItem) => dataItem.innerHTML);
     expect(symbolDataItem).toEqual(expect.arrayContaining(expectedDataItem));
 
     const backButton = screen.getAllByRole('link')[0];
@@ -72,5 +72,4 @@ describe('Clicking on a symbol on home page', () => {
   //   expect(highlightedPrice).toEqual(symbolPrice);
   //   expect(highlightedImage).toEqual(symbolImage);
   // });
-
 });

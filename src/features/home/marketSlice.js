@@ -9,8 +9,12 @@ export const getSymbolsList = createAsyncThunk('/stock/list/get', async () => {
 
 export const marketSlice = createSlice({
   name: 'market',
-  initialState: { entities: [], loading: true },
-  reducers: {},
+  initialState: { entities: [], selectedMarket: 'New York Stock Exchange', loading: true },
+  reducers: {
+    selectMarket: (state, action) => {
+      state.selectedMarket = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getSymbolsList.pending, (state) => {
       state.loading = true;
@@ -37,5 +41,7 @@ export const marketSlice = createSlice({
   },
 
 });
+
+export const { selectMarket } = marketSlice.actions;
 
 export default marketSlice.reducer;

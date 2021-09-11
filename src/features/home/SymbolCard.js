@@ -1,10 +1,9 @@
 // @ts-nocheck
-/* eslint-disable */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import fallbackImage from 'assets/image-not-found.png';
 import styles from './SymbolCard.module.scss';
 
 const SymbolCard = ({

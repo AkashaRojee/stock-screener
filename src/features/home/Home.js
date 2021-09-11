@@ -14,7 +14,7 @@ const Home = () => {
   let colour = 0;
   let symbols;
 
-  const { entities, loading } = useSelector((state) => state.market);
+  const { entities, selectedMarket, loading } = useSelector((state) => state.market);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   if (entities.length !== 0) {
-    ({ symbols } = findObjInArr(entities, 'market', 'New York Stock Exchange'));
+    ({ symbols } = findObjInArr(entities, 'market', selectedMarket));
     symbols = sortObjArrByKey(symbols, 'price');
   }
 

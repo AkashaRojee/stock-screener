@@ -9,7 +9,6 @@ describe('When app starts, home page is rendered', () => {
   });
 
   test('UI loads then displays list of symbols with image, name and price', async () => {
-
     const loadingIndicator = screen.getByText('Loading...');
     expect(loadingIndicator).toBeVisible();
 
@@ -17,7 +16,7 @@ describe('When app starts, home page is rendered', () => {
 
     expect(screen.getByText(/highest value/i)).toBeVisible();
     expect(screen.getByText(/stats by company/i)).toBeVisible();
-    
+
     stockNames.forEach((stockName) => {
       expect(stockName).toBeVisible();
     });
@@ -26,7 +25,7 @@ describe('When app starts, home page is rendered', () => {
     symbolPrices.forEach((symbolPrice) => {
       expect(symbolPrice).toBeVisible();
     });
-    
+
     const symbolImages = screen.getAllByRole('img');
     symbolImages.forEach((symbolImage) => {
       expect(symbolImage).toBeVisible();
@@ -54,5 +53,4 @@ describe('When app starts, home page is rendered', () => {
     expect(highlightedPrice).toEqual(symbolPrice);
     expect(highlightedImage).toEqual(symbolImage);
   });
-
 });

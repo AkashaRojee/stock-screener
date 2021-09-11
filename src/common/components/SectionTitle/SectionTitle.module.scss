@@ -1,4 +1,5 @@
 @import 'app/scss/variables';
+@import 'app/scss/flex';
 
 .sectionTitle {
   font-weight: $bold;
@@ -6,4 +7,12 @@
   background-color: #35548c;
   color: white;
   padding: 5px 10px;
+
+  @extend %flex-row;
+
+  select {
+    margin-left: auto;
+    font-family: inherit;
+    width: 50%;
+  }
 }

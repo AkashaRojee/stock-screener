@@ -13,7 +13,7 @@ const HighlightCard = ({ image, name, metric }) => (
           <img
             src={`https://financialmodelingprep.com/image-stock/${image}.jpg`}
             alt={name}
-            aria-label="highlighted image" 
+            aria-label="highlighted image"
           />
         </div>
       )
