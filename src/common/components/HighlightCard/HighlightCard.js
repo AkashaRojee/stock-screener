@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SplitPane from '../SplitPane/SplitPane';
-import SplitPaneLayout from '../SplitPane/SplitPaneLayout';
+import SplitPane from 'common/components/SplitPane/SplitPane';
+import SplitPaneLayout from 'common/components/SplitPane/SplitPaneLayout';
 import styles from './HighlightCard.module.scss';
 
 const HighlightCard = ({ image, name, metric }) => (

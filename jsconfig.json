@@ -5,7 +5,8 @@
       "app/*": ["app/*"],
       "features/*": ["features/*"],
       "common/*": ["common/*"],
-      "assets/*": ["assets/*"]
+      "assets/*": ["assets/*"],
+      "mocks/*": ["mocks/*"]
     },
     "checkJs": true,
     "jsx": "react"
