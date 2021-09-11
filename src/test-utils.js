@@ -13,6 +13,9 @@ function render(
     store = configureStore(
       {
         reducer: { market: marketReducer, symbols: symbolsReducer },
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+          serializableCheck: false,
+        }),
         preloadedState,
       },
     ),
