@@ -10,15 +10,19 @@ const HighlightCard = ({ image, name, metric }) => (
     first={
       (
         <div className={styles.image}>
-          <img src={`https://financialmodelingprep.com/image-stock/${image}.jpg`} alt={name} />
+          <img
+            src={`https://financialmodelingprep.com/image-stock/${image}.jpg`}
+            alt={name}
+            aria-label="highlighted image" 
+          />
         </div>
       )
     }
     second={
       (
         <>
-          <div className={styles.title}>{ name.toUpperCase() }</div>
-          <div>
+          <div className={styles.title} aria-label="highlighted name">{ name.toUpperCase() }</div>
+          <div aria-label="highlighted price">
             $
             { metric }
           </div>

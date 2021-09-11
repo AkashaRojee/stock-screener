@@ -3,8 +3,9 @@ import '@testing-library/jest-dom';
 import { render, screen } from '../test-utils';
 import App from './App';
 
-describe('When app loads', () => {
+describe('When app starts, home page is rendered', () => {
   beforeEach(() => {
+    jest.setTimeout(15000);
     render(<App />);
   });
 
@@ -29,16 +30,27 @@ describe('When app loads', () => {
     });
   });
 
-  // test('Menu items are displayed as links', () => {
-  //   const rocketsMenu = screen.getByText('Rockets').closest('a');
-  //   const dragonsMenu = screen.getByText('Dragons').closest('a');
-  //   const missionsMenu = screen.getByText('Missions').closest('a');
-  //   const profileMenu = screen.getByText('My profile').closest('a');
+  test('Back button is not displayed on home page', () => {
+    const backButton = screen.getAllByRole('link')[0];
+    expect(backButton).toHaveClass('hide');
+  });
 
-  //   expect(rocketsMenu).toHaveAttribute('href');
-  //   expect(dragonsMenu).toHaveAttribute('href');
-  //   expect(missionsMenu).toHaveAttribute('href');
-  //   expect(profileMenu).toHaveAttribute('href');
-  // });
-  
+  test('Highest-valued symbol is displayed at the top', async () => {
+    const symbol = await screen.findAllByText(/Berkshire/i);
+    screen.debug();
+
+    const firstSymbol = screen.getAllByRole('link')[1];
+    const symbolName = firstSymbol.querySelector('.title').innerHTML;
+    const symbolPrice = firstSymbol.querySelector('.subtitle').innerHTML;
+    const symbolImage = firstSymbol.querySelector('img').src;
+
+    const highlightedName = screen.getByLabelText('highlighted name').innerHTML;
+    const highlightedPrice = screen.getByLabelText('highlighted price').innerHTML;
+    const highlightedImage = screen.getByLabelText('highlighted image').getAttribute('src');
+
+    expect(highlightedName).toEqual(symbolName);
+    expect(highlightedPrice).toEqual(symbolPrice);
+    expect(highlightedImage).toEqual(symbolImage);
+  });
+
 });
