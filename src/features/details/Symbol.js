@@ -46,7 +46,7 @@ const Symbol = () => {
                   colourClass={colour}
                   key={dataItem}
                   item={dataItem}
-                  metric={dataValue.toString()}
+                  metric={(dataValue && dataValue.toString()) || 'N/A'}
                 />
               );
             })}
