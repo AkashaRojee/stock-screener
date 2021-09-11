@@ -9,7 +9,7 @@ describe('Clicking on a symbol on home page', () => {
     render(<App />);
   });
 
-  test('Details page loads then displays symbol data', async () => {
+  test('Details page loads then displays symbol data and functioning back button', async () => {
     const symbol = await screen.findAllByText(/Berkshire/i);
     const symbolToClick = symbol[1].innerHTML;
     
@@ -24,11 +24,13 @@ describe('Clicking on a symbol on home page', () => {
     expect(loadingIndicator).toBeVisible();
 
     const displayedSymbol = await screen.findAllByText(symbolToClick);
-    screen.debug();
 
     displayedSymbol.forEach((display) => {
       expect(display).toBeVisible();
     })
+
+    expect(screen.getByText(/symbol value/i)).toBeVisible();
+    expect(screen.getByText(/quote breakdown/i)).toBeVisible();
 
     const highlightedName = screen.getByLabelText('highlighted name').innerHTML;
     const highlightedPrice = screen.getByLabelText('highlighted price').innerHTML;
@@ -45,12 +47,13 @@ describe('Clicking on a symbol on home page', () => {
     const expectedDataItem = ['name', 'price', 'change', 'changesPercentage', 'open', 'previousClose', 'dayLow', 'dayHigh', 'yearLow', 'yearHigh', 'avgVolume', 'marketCap', 'pe', 'sharesOutstanding', 'eps'];
     const symbolDataItem = screen.getAllByLabelText('quote data item').map(dataItem => dataItem.innerHTML);
     expect(symbolDataItem).toEqual(expect.arrayContaining(expectedDataItem));
-  });
 
-  // test('Back button is not displayed on home page', () => {
-  //   const backButton = screen.getAllByRole('link')[0];
-  //   expect(backButton).toHaveClass('hide');
-  // });
+    const backButton = screen.getAllByRole('link')[0];
+    expect(backButton).toHaveClass('show');
+    userEvent.click(backButton);
+    expect(screen.getByText(/highest value/i)).toBeVisible();
+    expect(screen.getByText(/stats by company/i)).toBeVisible();
+  });
 
   // test('Highest-valued symbol is displayed at the top', async () => {
   //   const symbol = await screen.findAllByText(/Berkshire/i);

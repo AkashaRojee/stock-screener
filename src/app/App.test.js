@@ -14,6 +14,10 @@ describe('When app starts, home page is rendered', () => {
     expect(loadingIndicator).toBeVisible();
 
     const stockNames = await screen.findAllByText(/Berkshire/i);
+
+    expect(screen.getByText(/highest value/i)).toBeVisible();
+    expect(screen.getByText(/stats by company/i)).toBeVisible();
+    
     stockNames.forEach((stockName) => {
       expect(stockName).toBeVisible();
     });

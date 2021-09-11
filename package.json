@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs",
-    "test": "react-scripts test --testURL=http://localhost/stock-screener --testTimeout=20000",
+    "test": "react-scripts test --testURL=http://localhost/stock-screener --testTimeout=30000",
     "eject": "react-scripts eject",
     "eslint": "eslint src",
     "stylelint": "stylelint src"
