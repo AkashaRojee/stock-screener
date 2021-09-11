@@ -10,6 +10,8 @@ This project is a stock screener built as an SPA using React and Redux, as part 
 
 It allows users to view stock data for selected markets.
 
+The original design idea is by Nelson Sakwa - [view the website template on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
+
 ## Built With
 
 - Major languages: JS, SCSS
