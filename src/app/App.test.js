@@ -49,6 +49,7 @@ describe('When app starts, home page is rendered', () => {
     const highlightedPrice = screen.getByLabelText('highlighted price').innerHTML;
     const highlightedImage = screen.getByLabelText('highlighted image').getAttribute('src');
 
+    expect(symbol[0]).toBeVisible();
     expect(highlightedName).toEqual(symbolName);
     expect(highlightedPrice).toEqual(symbolPrice);
     expect(highlightedImage).toEqual(symbolImage);
