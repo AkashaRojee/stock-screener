@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -11,10 +10,22 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <Link to="/" className={onHomePage ? styles.hide : styles.show}><ArrowBackIosIcon /></Link>
-      <span>{onHomePage ? 'highest value' : 'symbol value'}</span>
+
+      <Link
+        to="/"
+        className={onHomePage ? styles.hide : styles.show}
+      >
+        <ArrowBackIosIcon />
+      </Link>
+
+      <span>
+        {onHomePage ? 'highest value' : 'symbol value'}
+      </span>
+
       <MicIcon />
+
       <SettingsIcon />
+
     </div>
   );
 };

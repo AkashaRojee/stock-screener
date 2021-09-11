@@ -34,7 +34,7 @@ const Symbol = () => {
             metric={wantedSymbol.price}
           />
 
-          <SectionTitle title="QUOTE BREAKDOWN" />
+          <SectionTitle title="QUOTE BREAKDOWN" filter={false} />
 
           <div className={styles.dataRows}>
 
