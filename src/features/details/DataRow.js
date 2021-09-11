@@ -6,8 +6,8 @@ const DataRow = ({ colourClass, item, metric }) => {
   const backgroundColour = colourClass ? styles.colour1 : styles.colour2;
 
   return (
-    <div className={`${styles.dataRow} ${backgroundColour}`}>
-      <span className={styles.title}>{ item }</span>
+    <div className={`${styles.dataRow} ${backgroundColour}`} aria-label="quote data">
+      <span className={styles.title} aria-label="quote data item">{ item }</span>
       <span>{ metric }</span>
     </div>
   );

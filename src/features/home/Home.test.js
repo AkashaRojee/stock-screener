@@ -9,9 +9,13 @@ describe('Clicking on a symbol on home page', () => {
     render(<App />);
   });
 
-  test('test home', async () => {
+  test('Details page loads then displays symbol data', async () => {
     const symbol = await screen.findAllByText(/Berkshire/i);
     const symbolToClick = symbol[1].innerHTML;
+    
+    const symbolName = document.querySelector('.title').innerHTML;
+    const symbolPrice = document.querySelector('.subtitle').innerHTML;
+    const symbolImage = document.querySelector('img').src;
     
     const links = screen.getAllByRole('link');
     userEvent.click(links[1]);
@@ -19,25 +23,28 @@ describe('Clicking on a symbol on home page', () => {
     const loadingIndicator = screen.getByText('Loading...');
     expect(loadingIndicator).toBeVisible();
 
-    const symbolName = await screen.findAllByText(symbolToClick);
+    const displayedSymbol = await screen.findAllByText(symbolToClick);
     screen.debug();
-  //   const loadingIndicator = screen.getByText('Loading...');
-  //   expect(loadingIndicator).toBeVisible();
 
-  //   const stockNames = await screen.findAllByText(/Berkshire/i);
-  //   stockNames.forEach((stockName) => {
-  //     expect(stockName).toBeVisible();
-  //   });
+    displayedSymbol.forEach((display) => {
+      expect(display).toBeVisible();
+    })
 
-  //   const symbolPrices = screen.getAllByText(/$/i);
-  //   symbolPrices.forEach((symbolPrice) => {
-  //     expect(symbolPrice).toBeVisible();
-  //   });
-    
-  //   const symbolImages = screen.getAllByRole('img');
-  //   symbolImages.forEach((symbolImage) => {
-  //     expect(symbolImage).toBeVisible();
-  //   });
+    const highlightedName = screen.getByLabelText('highlighted name').innerHTML;
+    const highlightedPrice = screen.getByLabelText('highlighted price').innerHTML;
+    const highlightedImage = screen.getByLabelText('highlighted image').getAttribute('src');
+    expect(highlightedName).toEqual(symbolName);
+    expect(highlightedPrice).toEqual(symbolPrice);
+    expect(highlightedImage).toEqual(symbolImage);
+
+    const symbolData = screen.getAllByLabelText('quote data');
+    symbolData.forEach((data) => {
+      expect(data).toBeVisible();
+    });
+
+    const expectedDataItem = ['name', 'price', 'change', 'changesPercentage', 'open', 'previousClose', 'dayLow', 'dayHigh', 'yearLow', 'yearHigh', 'avgVolume', 'marketCap', 'pe', 'sharesOutstanding', 'eps'];
+    const symbolDataItem = screen.getAllByLabelText('quote data item').map(dataItem => dataItem.innerHTML);
+    expect(symbolDataItem).toEqual(expect.arrayContaining(expectedDataItem));
   });
 
   // test('Back button is not displayed on home page', () => {
