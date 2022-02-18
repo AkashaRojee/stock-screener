@@ -20,7 +20,7 @@ The original design idea is by Nelson Sakwa - [view the website template on Beha
 
 ## Live Demo
 
-[Live Demo Link](https://AkashaRojee.github.io/stock-screener)
+Please, view in mobile version: [Live Demo Link](https://AkashaRojee.github.io/stock-screener)
 
 ## Getting Started
 
