@@ -1,0 +1,56 @@
+@import 'app/scss/variables';
+@import 'app/scss/flex';
+
+.symbolCard {
+  @extend %flex-col;
+
+  width: 50%;
+  text-decoration: none;
+  color: white;
+  gap: 5px;
+  padding: 10px 10px 20px 10px;
+
+  .title {
+    font-weight: $bold;
+    text-align: right;
+  }
+
+  .subtitle {
+    text-align: right;
+    margin-top: auto;
+  }
+
+  svg {
+    @extend %self-end;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+  }
+
+  .image {
+    width: 90%;
+    height: 160px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    border-radius: 10px;
+    background-color: white;
+
+    img {
+      max-width: 90%;
+      max-height: 150px;
+    }
+  }
+}
+
+.colour1 {
+  background-color: $bar-color;
+}
+
+.colour2 {
+  background-color: $alt-color;
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src/",
+    "paths": {
+      "app/*": ["app/*"],
+      "features/*": ["features/*"],
+      "common/*": ["common/*"],
+      "assets/*": ["assets/*"],
+      "mocks/*": ["mocks/*"]
+    },
+    "checkJs": true,
+    "jsx": "react"
+  }
+}

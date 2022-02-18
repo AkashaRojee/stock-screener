@@ -1,0 +1,11 @@
+@import 'app/scss/flex';
+@import 'app/scss/variables';
+
+.loadingIndicator {
+  @extend %flex-col;
+  @extend %align-center;
+
+  font-size: 30px;
+  font-weight: $bold;
+  margin-top: calc(50vh - 37px);
+}

@@ -1,0 +1,5 @@
+@import 'app/scss/flex';
+
+.dataRows {
+  @extend %flex-col;
+}

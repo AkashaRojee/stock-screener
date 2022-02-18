@@ -1,0 +1,23 @@
+@import 'app/scss/variables';
+@import 'app/scss/flex';
+
+.dataRow {
+  @extend %flex-row;
+  @extend %justify-between;
+
+  font-size: 18px;
+  padding: 20px 10px;
+  color: white;
+
+  .title {
+    font-weight: $bold;
+  }
+}
+
+.colour1 {
+  background-color: $bar-color;
+}
+
+.colour2 {
+  background-color: $alt-color;
+}

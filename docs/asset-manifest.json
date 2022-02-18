@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/stock-screener/static/css/main.e1db1524.chunk.css",
+    "main.js": "/stock-screener/static/js/main.0629a3ed.chunk.js",
+    "main.js.map": "/stock-screener/static/js/main.0629a3ed.chunk.js.map",
+    "runtime-main.js": "/stock-screener/static/js/runtime-main.4180a6fd.js",
+    "runtime-main.js.map": "/stock-screener/static/js/runtime-main.4180a6fd.js.map",
+    "static/js/2.e045c5c0.chunk.js": "/stock-screener/static/js/2.e045c5c0.chunk.js",
+    "static/js/2.e045c5c0.chunk.js.map": "/stock-screener/static/js/2.e045c5c0.chunk.js.map",
+    "static/js/3.8165620a.chunk.js": "/stock-screener/static/js/3.8165620a.chunk.js",
+    "static/js/3.8165620a.chunk.js.map": "/stock-screener/static/js/3.8165620a.chunk.js.map",
+    "index.html": "/stock-screener/index.html",
+    "static/css/main.e1db1524.chunk.css.map": "/stock-screener/static/css/main.e1db1524.chunk.css.map",
+    "static/js/2.e045c5c0.chunk.js.LICENSE.txt": "/stock-screener/static/js/2.e045c5c0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4180a6fd.js",
+    "static/js/2.e045c5c0.chunk.js",
+    "static/css/main.e1db1524.chunk.css",
+    "static/js/main.0629a3ed.chunk.js"
+  ]
+}

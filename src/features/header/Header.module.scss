@@ -1,0 +1,26 @@
+@import 'app/scss/variables';
+@import 'app/scss/flex';
+
+.header {
+  @extend %flex-row;
+
+  background-color: $bar-color;
+  color: white;
+  padding: 5px 10px;
+  gap: 5px;
+
+  span {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: $light;
+    font-size: 18px;
+  }
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
