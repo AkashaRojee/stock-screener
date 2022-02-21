@@ -10,7 +10,7 @@ This project is a stock screener SPA built as my React capstone at Microverse. U
 
 It is built with React and Redux, implements the Financial Modeling Prep API, and is tested with React Testing Library and Mock Service Worker.
 
-[**View video presentation**](https://www.loom.com/share/c6784590d19a48e2a37680e5aae8884a)
+### [**View video presentation**](https://www.loom.com/share/c6784590d19a48e2a37680e5aae8884a)
 
 # Project Highlights
 
@@ -28,13 +28,13 @@ It is built with React and Redux, implements the Financial Modeling Prep API, an
 
 ### - Data fetching and loading from API is managed using thunk lifecycle actions via `createAsyncThunk`
 
-### - Testing API calls is made at the network level with proper mocking using Mock Service Worker
+https://github.com/AkashaRojee/stock-screener/blob/f4167e11847fa91c650eacaed60b868e3e80c2fb/src/features/home/marketSlice.js#L5-L43
 
-_I wrote a blog article about it: [Testing React Components with API Calls and Redux Store](https://www.akasharojee.codes/2021/09/04/testing-react-components-with-api-calls-and-redux-store.html)_
+### - Testing API calls is made at the network level with proper mocking using Mock Service Worker. _[View my blog post about it](https://www.akasharojee.codes/2021/09/04/testing-react-components-with-api-calls-and-redux-store.html)_.
 
 ### - Customised React Testing Library's `render` method so that tests can access real Redux store and logic and use actual app behaviour
 
-_See blog article above._
+https://github.com/AkashaRojee/stock-screener/blob/f4167e11847fa91c650eacaed60b868e3e80c2fb/src/test-utils.js#L9-L33
 
 ## Built With
 
