@@ -14,15 +14,17 @@ It is built with React and Redux, implements the Financial Modeling Prep API, an
 
 ### - Built with React's reusability principle in mind
 
-| `Home` component | `Symbol` component |
-| -- | -- |
-| https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/home/Home.js#L30-L61 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/details/Symbol.js#L27-L58 |
+https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/home/Home.js#L30-L61
+
+https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/details/Symbol.js#L27-L58
 
 ### - Uses component composition via a component I custom-built to manage flexbox structures
 
-| `HightlightCard` component | Reusable `SplitPane` component |
-| -- | -- |
-| https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/HighlightCard/HighlightCard.js#L8-L32 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/common/components/SplitPane/SplitPane.js#L6-L15 https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/SplitPane/SplitPaneLayout.js#L1-L8 |
+https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/HighlightCard/HighlightCard.js#L8-L32
+
+https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/common/components/SplitPane/SplitPane.js#L6-L15 
+
+https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/SplitPane/SplitPaneLayout.js#L1-L8
 
 ### - Data fetching and loading from API is managed using thunk lifecycle actions via `createAsyncThunk`
 
