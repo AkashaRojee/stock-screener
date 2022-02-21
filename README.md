@@ -14,22 +14,28 @@ It is built with React and Redux, implements the Financial Modeling Prep API, an
 
 # Project Highlights
 
-- Built with React's reusability principle in mind
+### - Built with React's reusability principle in mind
 
 | `Home` component | `Symbol` component |
 | -- | -- |
 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/home/Home.js#L30-L61 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/details/Symbol.js#L27-L58 |
 
-- Uses component composition via a component I custom-built components to manage flexbox structures
+### - Uses component composition via a component I custom-built components to manage flexbox structures
 
+| `HightlightCard` component | Reusable `SplitPane` component |
+| -- | -- |
+| https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/HighlightCard/HighlightCard.js#L8-L32 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/common/components/SplitPane/SplitPane.js#L6-L15 https://github.com/AkashaRojee/stock-screener/blob/aecd51d7b0941342602c2ff0cc066d656e887269/src/common/components/SplitPane/SplitPaneLayout.js#L1-L8 |
 
+### - Data fetching and loading from API is managed using thunk lifecycle actions via `createAsyncThunk`
 
-- Data fetching and loading from API is managed using thunk lifecycle actions via `createAsyncThunk`
-- Testing API calls are made at the network level, to mimic real API calls being made from comps. Used msw
-- Customised React's `render` method so that tests can access real Redux store and logic and use actual app behaviour
-API calls are mocked at network level by using Mock Service Worker, and store is made globally available by customising React Testing Library's render method
-More information about what was done
-- 
+### - Testing API calls is made at the network level with proper mocking using Mock Service Worker
+
+_I wrote a blog article about it: [Testing React Components with API Calls and Redux Store](https://www.akasharojee.codes/2021/09/04/testing-react-components-with-api-calls-and-redux-store.html)_
+
+### - Customised React Testing Library's `render` method so that tests can access real Redux store and logic and use actual app behaviour
+
+_See blog article above._
+
 ## Built With
 
 - Major languages: JS, SCSS
