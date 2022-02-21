@@ -6,17 +6,35 @@
 
 <!-- ![screenshot](screenshot-mobile.png) -->
 
-This project is a stock screener built as an SPA using React and Redux, as part of Microverse projects.
+This project is a stock screener SPA built as my React capstone at Microverse. Users can view stock data for selected markets and access company quotes.
 
-It allows users to view stock data for selected markets.
+It is built with React and Redux, implements the Financial Modeling Prep API, and is tested with React Testing Library and Mock Service Worker.
 
-The original design idea is by Nelson Sakwa - [view the website template on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
+[**View video presentation**](https://www.loom.com/share/c6784590d19a48e2a37680e5aae8884a)
 
+# Project Highlights
+
+- Built with React's reusability principle in mind
+
+| `Home` component | `Symbol` component |
+| -- | -- |
+| https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/home/Home.js#L30-L61 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/details/Symbol.js#L27-L58 |
+
+- Uses component composition via a component I custom-built components to manage flexbox structures
+
+
+
+- Data fetching and loading from API is managed using thunk lifecycle actions via `createAsyncThunk`
+- Testing API calls are made at the network level, to mimic real API calls being made from comps. Used msw
+- Customised React's `render` method so that tests can access real Redux store and logic and use actual app behaviour
+API calls are mocked at network level by using Mock Service Worker, and store is made globally available by customising React Testing Library's render method
+More information about what was done
+- 
 ## Built With
 
 - Major languages: JS, SCSS
-- Others: JSX
-- Libraries used: React
+- Others: JSX, Sass
+- Libraries used: React, Redux, Mock Service Worker
 
 ## Live Demo
 
@@ -88,6 +106,11 @@ Contributions, issues, and feature requests are welcome!
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgements
+
+- [Financial Modeling Prep](https://financialmodelingprep.com/developer/docs/)
+- [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
 
 ## 📝 License
 
