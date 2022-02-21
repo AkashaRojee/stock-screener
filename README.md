@@ -4,7 +4,7 @@
 
 > Stock Screener SPA
 
-![screenshot](screenshot.png)
+![screenshot](stock-screener-screenshot.png)
 
 This project is a stock screener SPA built as my React capstone at Microverse. Users can view stock data for selected markets and access company quotes.
 
