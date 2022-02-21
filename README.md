@@ -18,7 +18,7 @@ It is built with React and Redux, implements the Financial Modeling Prep API, an
 | -- | -- |
 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/home/Home.js#L30-L61 | https://github.com/AkashaRojee/stock-screener/blob/731015af0b7c56835964da5bba74cc9837709e3c/src/features/details/Symbol.js#L27-L58 |
 
-### - Uses component composition via a component I custom-built components to manage flexbox structures
+### - Uses component composition via a component I custom-built to manage flexbox structures
 
 | `HightlightCard` component | Reusable `SplitPane` component |
 | -- | -- |
