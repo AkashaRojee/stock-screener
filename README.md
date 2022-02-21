@@ -10,9 +10,7 @@ This project is a stock screener SPA built as my React capstone at Microverse. U
 
 It is built with React and Redux, implements the Financial Modeling Prep API, and is tested with React Testing Library and Mock Service Worker.
 
-### [**View video presentation**](https://www.loom.com/share/c6784590d19a48e2a37680e5aae8884a)
-
-# Project Highlights
+# Project Highlights: [view video presentation](https://www.loom.com/share/c6784590d19a48e2a37680e5aae8884a)
 
 ### - Built with React's reusability principle in mind
 
@@ -78,6 +76,47 @@ npm install
 The assets are in the `src` directory.
 
 The output is in the `build` directory.
+
+#### Project structure
+
+The project is structured as feature folders with ducks slices.
+
+```
+- app //global setup and styling
+- common //generic components
+- features
+  - /feature
+    - Feature.js //main file of feature
+    - featureSlice.js //feature's reducer
+- mocks
+```
+
+#### Component hierarchy
+
+```
+- App
+  - Header
+  - Route: Home
+    - HighlightCard
+    - SectionTitle
+    - SymbolCard(s)
+  - Route: Symbols
+    - HighlightCard
+    - SectionTitle
+    - DataRow(s)
+```
+
+### Routing implementation
+
+#### Home page
+
+- Upon initial render, get list of symbols from `stock` API endpoint, save into store, then display in page.
+- Clicking on a symbol opens its details page.
+
+#### Details page
+
+- Upon initial render, get data about symbol from `quote` API endpoint, save into store, then display in page.
+- Clicking on back button returns to home page.
 
 ### Deployment
 
